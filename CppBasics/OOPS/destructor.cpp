@@ -9,7 +9,7 @@ class Student{
         Student(string name, double cgpa){
             this->name = name;
             cgpaPtr = new double;
-            *cgpaPtr = cgpa;
+            *cgpaPtr = cgpa;;
         }
 
         //This is a user defined destructor
