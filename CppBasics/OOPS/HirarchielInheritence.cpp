@@ -31,4 +31,4 @@ int main(){
     cout << "Name: " << s1.name << endl;
     cout << "Age: " << s1.age << endl;
     cout << "RollNo.: " << s1.rollNo << endl;
-}
+} 
