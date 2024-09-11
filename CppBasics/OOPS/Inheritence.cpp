@@ -8,35 +8,26 @@ class Person{
 public:
     string name;
     int age;
-
-    //Parametrized constructor made by user
-    Person(string name, int age){
-        this->name = name;
-        this->age = age;
-    }
 };
 
-//This is a child class who has inherited the properties of parent class
+//This is a child class who has inherited the properties of parent class called "Person"
 class Student : public Person{
 public:
     int rollNo;
+};
 
-    //Inherited constructor to be called along with parent constructor made by user
-    Student(string name, int age, int rollNo) : Person(name , age){
-        this->rollNo = rollNo;
-    }
-
-    void getInfo(){
-        cout << "Name: " << name << endl;
-        cout << "Age: " << age << endl;
-        cout << "RollNo: " << rollNo << endl;
-    }
-
+//This is a child class which is inheriting the property of two parent classes at different level, this type of inheritence is called multi - level inheritence.
+class gradStudent : public Student{
+public:
+    string researchArea;
 };
 
 int main(){
-    Student s1("Vihan Anand", 20, 5);
-    s1.getInfo();
+    gradStudent s1;
+    s1.name = "Tony Stark";
+    s1.researchArea = "Quantum Physics";
+    cout << s1.name << endl;
+    cout << s1.researchArea << endl;
 
     return 0;
 }
