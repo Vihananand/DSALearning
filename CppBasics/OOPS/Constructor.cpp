@@ -18,7 +18,7 @@ public:
     //Non-parameterized Constructor
     // Teacher(){
     //     //cout << "This is a constructor!";
-    //     department = "Computer Scienece";
+    //     department = "Computer Science";
     // }
     
     //Parameterized Constructor
