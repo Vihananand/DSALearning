@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference Between Call by Value, Call by Address, and Call by Reference</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Difference Between Call by Value, Call by Address, and Call by Reference</h2>
+
+<table>
+    <tr>
+        <th>Feature</th>
+        <th>Call by Value</th>
+        <th>Call by Address</th>
+        <th>Call by Reference</th>
+    </tr>
+    <tr>
+        <td>Argument Passed</td>
+        <td>Copy of the actual value</td>
+        <td>Address (pointer) of the variable</td>
+        <td>Reference (alias) to the variable</td>
+    </tr>
+    <tr>
+        <td>Original Value Changed</td>
+        <td>No</td>
+        <td>Yes</td>
+        <td>Yes</td>
+    </tr>
+    <tr>
+        <td>Efficiency</td>
+        <td>Less efficient for large data</td>
+        <td>Efficient for large data</td>
+        <td>Efficient and easy to use</td>
+    </tr>
+    <tr>
+        <td>Syntax</td>
+        <td>Basic, no extra syntax</td>
+        <td>Uses pointers and <code>*</code>, <code>&</code> operators</td>
+        <td>Uses reference <code>&</code></td>
+    </tr>
+    <tr>
+        <td>Common Use Cases</td>
+        <td>Simple data types, local variables</td>
+        <td>Dynamic memory, low-level programming</td>
+        <td>When changes to original data are needed</td>
+    </tr>
+</table>
+
+</body>
+</html>
