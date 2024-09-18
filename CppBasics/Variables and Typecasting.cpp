@@ -3,7 +3,7 @@ using namespace std;
 
 int main(){
     float d = 34.4f; // This 34.4 will be passed as float because of 'f'
-    long double e = 34.4l; // This 34.4 will be passed as long double becaus eof 'l'
+    long double e = 34.4l; // This 34.4 will be passed as long double because of 'l'
 
      cout << "The size of d is " << sizeof(d) << " bytes." << endl;
      cout << "The size of e is " << sizeof(e) << " bytes." << endl;
