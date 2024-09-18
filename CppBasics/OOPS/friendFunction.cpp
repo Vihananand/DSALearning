@@ -1,21 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Complex{
+class Distance{
+    int meters = 0;
+
 public:
-    int a, b;
-    void setNumber(int n1, int n2){
-        a = n1;
-        b = n2;
+
+    void displayData(){
+        cout << "Distance: " << meters << " meters" << endl;
     }
-    void printNumber(){
-        cout << a << " + " << b << "i" << endl;
-    }
+
+    friend void addValue(Distance &d); // This is the declaration that addValue is a friend function and it can acess the private members of the class
 };
 
-int main(){
-    Complex c1;
+//This is a function that is friend of the class so it has access to all the private members of the class even if it is outside the class
+void addValue(Distance &d){
+    d.meters = d.meters + 5;
+}
 
-    c1.setNumber(4, 8);
-    c1.printNumber();
+int main(){
+    Distance d1;
+    d1.displayData();
+
+    addValue(d1);
+    d1.displayData();
 }
