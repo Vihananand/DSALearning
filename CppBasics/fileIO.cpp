@@ -16,7 +16,7 @@ Primarily there are two ways to open a file:
 
 int main(){
     //This is how we will perform writing operation in C++
-    string message = "Hello I am under the water here too much raining. Whooooooooo!";
+    string message = "Hello I am under the world!";
     ofstream out("sample.txt"); //Here the sample.txt was blank txt
     out << message;//But the message will be written in the sample.txt file
 
