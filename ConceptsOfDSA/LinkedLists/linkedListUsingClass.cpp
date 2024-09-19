@@ -28,6 +28,12 @@ void insertAtTail(node* &head, int val){
     temp->next = n;
 }
 
+void insertAtHead(node* &head, int val){
+    node* n = new node(val);
+    n->next = head;
+    head = n;
+}
+
 void dispaly(node* head){
     node* temp = head;
     while (temp != NULL)
