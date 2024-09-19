@@ -44,7 +44,7 @@ void deleteHead(node *&head){
     delete toDelete;
 }
 
-//deleting a particular node with a prticular value
+//deleting a particular node with a particular value
 void deletion(node *&head, int val){
 
     //If linked list has no nodes in it
