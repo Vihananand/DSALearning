@@ -15,8 +15,8 @@ public:
     }
 
     //setter
-    void setSalary(double s){
-        salary = s;
+    void setSalary(double salary){
+        this->salary = salary;
     }
     //getter
     double getSalary(){
