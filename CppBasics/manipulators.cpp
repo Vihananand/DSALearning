@@ -13,7 +13,7 @@ int main(){
     cout << "Value of B: " << setw(4) << b << endl;
     cout << "Value of C: " << setw(4) << c << endl;
 
-    //Forces floating-point numbers to be displayed in fixed-point notation rather than scientific notation. It is often used in combination with setprecision to control the number of digits after the decimal.
+    //fixed is often used in combination with setprecision to control the number of digits after the decimal.
     cout << "Value of d in 3 decimal places is " << fixed << setprecision(3) << d << endl;
 
     //Sets the number of digits to display for floating-point numbers
