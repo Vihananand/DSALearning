@@ -6,8 +6,8 @@ public:
     int data;
     node *next;
 
-    node(int val){
-        data = val;
+    node(int data){
+        this->data = data;
         next = NULL;
     }
 }; 
