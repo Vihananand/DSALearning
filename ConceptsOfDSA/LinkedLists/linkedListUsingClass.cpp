@@ -79,10 +79,64 @@ void display(node *head){
     cout << "NULL" << endl;
 }
 
+void add(node *head){
+    int sum = 0;
+    node *temp = head;
+
+    while (temp != NULL)
+    {
+        sum = sum + temp->data;
+        temp = temp->next;
+    }
+    cout << "Addition: " << sum << endl;
+}
+
+void count(node *head){
+    int count = 0;
+    node *temp = head;
+
+    while (temp != NULL)
+    {
+        count++;
+        temp = temp->next;
+    }
+    cout << "Number of elements in linked list: " << count << endl;
+}
+
+void search(node *head, int ElementToFind){
+    node *temp = head;
+
+    bool found = false;
+    int index, i = 0; 
+
+    while (temp != NULL)
+    {   
+        if (temp->data == ElementToFind){
+            found = true;
+            index = i;
+        }
+        temp = temp->next;
+        i++;
+    }
+    if(found == true){
+        cout << "Element found at " << index << " index" << endl;
+    }
+    else{
+        cout << "Element not Found!!";
+    }
+}
+
 int main(){
     node *head = NULL;
+    
     insertAtTail(head, 1);
     insertAtTail(head, 2);
     insertAtTail(head, 3);
+    insertAtTail(head, 4);
+    insertAtTail(head, 5);
+
     display(head);
+    add(head);
+    count(head);
+    search(head, 5);
 }
