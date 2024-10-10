@@ -13,52 +13,52 @@ public:
 }; 
 
 //Inserting node at tail
-void insertAtTail(node *&head, int val){
+void insertAtTail(node *&first, int val){
     node *n = new node(val);
 
-    if(head == NULL){
-        head = n;
+    if(first == NULL){
+        first = n;
         return;
     }
 
-    node *temp = head;
+    node *temp = first;
     while (temp->next != NULL)
     {
         temp = temp->next;
     }
     temp->next = n;
-}
+};
 
-//Inserting node at starting
-void insertAtHead(node *&head, int val){
+//Inserting node at head
+void insertAthead(node *&first, int val){
     node *n = new node(val);
-    n->next = head;
-    head = n;
-}
+    n->next = first;
+    first = n;
+};
 
-//Deleting the first node of List
-void deleteHead(node *&head){
-    node *toDelete = head;
-    head = head->next;
+//deleting the first node of List
+void deleteHead(node *&first){
+    node *toDelete = first;
+    first = first->next;
 
     delete toDelete;
-}
+};
 
 //deleting a particular node with a particular value
-void deletion(node *&head, int val){
+void deletion(node *&first, int val){
 
     //If linked list has no nodes in it
-    if(head == NULL){
+    if(first == NULL){
         return;
     }
 
     //If linked list contain only 1 node that is head
-    if(head->next == NULL){
-        deleteHead(head);
+    if(first->next == NULL){
+        deleteHead(first);
         return;
     }
 
-    node *temp = head;
+    node *temp = first;
     while (temp->next->data != val)
     {
         temp = temp->next;
@@ -67,21 +67,23 @@ void deletion(node *&head, int val){
     temp->next = temp->next->next;
 
     delete toDelete;
-}
+};
 
-void display(node *head){
-    node *temp = head;
+//print linked list
+void display(node *first){
+    node *temp = first;
     while (temp != NULL)
     {
         cout << temp->data << "->";
         temp = temp->next;
     }
     cout << "NULL" << endl;
-}
+};
 
-void add(node *head){
+//add all the elements of the linked list
+void add(node *first){
     int sum = 0;
-    node *temp = head;
+    node *temp = first;
 
     while (temp != NULL)
     {
@@ -89,11 +91,12 @@ void add(node *head){
         temp = temp->next;
     }
     cout << "Addition: " << sum << endl;
-}
+};
 
-void count(node *head){
+//count the number of elements in the linked list
+void count(node *first){
     int count = 0;
-    node *temp = head;
+    node *temp = first;
 
     while (temp != NULL)
     {
@@ -101,10 +104,11 @@ void count(node *head){
         temp = temp->next;
     }
     cout << "Number of elements in linked list: " << count << endl;
-}
+};
 
-void search(node *head, int ElementToFind){
-    node *temp = head;
+//search a particular element in linked list
+void search(node *first, int ElementToFind){
+    node *temp = first;
 
     bool found = false;
     int index, i = 0; 
@@ -119,24 +123,54 @@ void search(node *head, int ElementToFind){
         i++;
     }
     if(found == true){
-        cout << "Element found at " << index << " index" << endl;
+        cout << "Element found at " << index << " index";
     }
     else{
         cout << "Element not Found!!";
     }
-}
+};
+
+//maximum value in linked list
+void max(node *first){
+    node *temp = first;
+    int max = INT_MIN;
+
+    while(temp != NULL){
+        if(temp->data > max){
+            max = temp->data;
+        }
+        temp = temp->next;
+    }
+    cout << endl << "Max Value: " << max;
+};
+
+//minimum value in linked list
+void min(node *first){
+    node *temp = first;
+    int min = INT_MAX;
+
+    while(temp != NULL){
+        if(temp->data < min){
+            min = temp->data;
+        }
+        temp = temp->next;
+    }
+    cout << endl << "Min Value: " << min;
+};
 
 int main(){
-    node *head = NULL;
+    node *first = NULL;
     
-    insertAtTail(head, 1);
-    insertAtTail(head, 2);
-    insertAtTail(head, 3);
-    insertAtTail(head, 4);
-    insertAtTail(head, 5);
+    insertAtTail(first, -31);
+    insertAtTail(first, 2);
+    insertAtTail(first, 13);
+    insertAtTail(first, 4);
+    insertAtTail(first, 5);
 
-    display(head);
-    add(head);
-    count(head);
-    search(head, 5);
+    display(first);
+    add(first);
+    count(first);
+    search(first, 5);
+    max(first);
+    min(first);
 }
