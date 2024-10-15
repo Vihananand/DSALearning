@@ -106,8 +106,8 @@ void count(node *first){
     cout << "Number of elements in linked list: " << count << endl;
 };
 
-//search a particular element in linked list
-void search(node *first, int ElementToFind){
+//search a particular element in linked list using linear searcha
+void linearsearch(node *first, int ElementToFind){
     node *temp = first;
 
     bool found = false;
@@ -129,6 +129,7 @@ void search(node *first, int ElementToFind){
         cout << "Element not Found!!";
     }
 };
+
 
 //maximum value in linked list
 void max(node *first){
@@ -155,22 +156,102 @@ void min(node *first){
         }
         temp = temp->next;
     }
-    cout << endl << "Min Value: " << min;
+    cout << endl << "Min Value: " << min << endl;
 };
+
+// Selection Sort function for linked list
+void selectionSort(node *first) {
+    node *temp = first;
+
+    while (temp != NULL) {
+        node *minNode = temp;
+        node *r = temp->next;
+
+        // Traverse the unsorted part of the list
+        while (r != NULL) {
+            if (r->data < minNode->data) {
+                minNode = r;
+            }
+            r = r->next;
+        }
+
+        // Swap the data between temp and minNode
+        if (minNode != temp) {
+            // swap(temp->data, minNode->data);
+            int tempData = temp->data;
+            temp->data = minNode->data;
+            minNode->data = tempData;
+        }
+        temp = temp->next;
+    }
+}
+
+// Function to find the middle node of a linked list
+node* findMiddle(node *start, node *end) {
+
+    if (start == NULL){
+        return NULL;
+    }
+
+    node *slow = start;
+    node *fast = start;
+
+    // Using slow and fast pointers to find the middle
+    while (fast != end && fast->next != end) {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    return slow;
+};
+
+// Binary search function in a sorted linked list
+void binarysearch(node *first, int target) {
+    selectionSort(first);
+    node *start = first;
+    node *end = NULL;
+
+    while (start != end) {
+        // Find the middle element between 'start' and 'end'
+        node *mid = findMiddle(start, end);
+
+        // If the middle element is the target, print and return
+        if (mid->data == target) {
+            cout << endl << "Element " << target << " found in the linked list." << endl;
+            return;
+        }
+
+        // If the target is smaller than the middle element, search in the left half
+        else if (target < mid->data) {
+            end = mid; // Update the end to mid (search left half)
+        }
+
+        // If the target is greater, search in the right half
+        else {
+            start = mid->next; // Update the start to mid->next (search right half)
+        }
+    }
+
+    // If we exit the loop, the element is not found
+    cout << endl << "Element " << target << " not found in the linked list." << endl;
+};
+
 
 int main(){
     node *first = NULL;
     
     insertAtTail(first, -31);
-    insertAtTail(first, 2);
-    insertAtTail(first, 13);
     insertAtTail(first, 4);
+    insertAtTail(first, 2);
     insertAtTail(first, 5);
+    insertAtTail(first, 13);
 
     display(first);
     add(first);
     count(first);
-    search(first, 5);
+    linearsearch(first, 5);
+    binarysearch(first, 22);
     max(first);
     min(first);
+    selectionSort(first);
+    display(first);
 }
