@@ -7,7 +7,7 @@
 ```c++
 push(x) //To push an element on the top of stack
 pop() //Removes the topmost element from stack
-top() //It will target the topmost element of linked list
+top() //It will target the topmost element of stack
 empty() //It will check if the stack is empty or not and if it is not empty it will return false
 ```
 ---
