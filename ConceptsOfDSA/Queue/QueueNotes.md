@@ -4,7 +4,7 @@
 
 ### 2. We will need two pointer to store the front and back of the Queue.
 
-### 2. Stack has these important operations: 
+### 3. Stack has these important operations: 
 
 ```c++
 enqueue(x); //push element in queue
@@ -12,3 +12,5 @@ dequeue(x); //remove elemnt from queue
 peek(); //tells the value that is in front
 empty(): //tell if the queue is empty or not
 ```
+
+### 4. Queue can be made from Linked List and Stack also.
