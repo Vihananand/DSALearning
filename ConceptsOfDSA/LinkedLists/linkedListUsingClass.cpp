@@ -4,7 +4,7 @@ using namespace std;
 class node{
 public:
     int data;
-    node *next;
+    node* next;
 
     node(int data){
         this->data = data;
@@ -14,14 +14,14 @@ public:
 
 //Inserting node at tail
 void insertAtTail(node *&first, int val){
-    node *n = new node(val);
+    node* n = new node(val);
 
     if(first == NULL){
         first = n;
         return;
     }
 
-    node *temp = first;
+    node* temp = first;
     while (temp->next != NULL)
     {
         temp = temp->next;
