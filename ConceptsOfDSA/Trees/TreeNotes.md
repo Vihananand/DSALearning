@@ -74,7 +74,7 @@ void postorder(struct Node* root){
 
 ![Local Image](./NotesImages/ScreenShot4.png)
 
-### For Step 1, Step 2, Step 4, Step 5:
+### For Step 1, Step 2, Step 4, Step 5 and Step 6:
 
 ```c++
     Node* buildTree(int preorder[], int inorder[], int start, int end){
