@@ -14,7 +14,7 @@ void reverseString(string s){
         st.push(word);
     }
 
-    while(!st.empty()){
+    while(st.empty() != 1){
         cout << st.top() << " ";
         st.pop();
     }
