@@ -1,4 +1,5 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<stack>
 using namespace std;
 
 void insertAtBottom(stack<int> &st, int element){
