@@ -67,3 +67,49 @@ void postorder(struct Node* root){
     cout << root->data << " ";
 }
 ```
+
+### 6. Creating tree using preorder and inorder:
+
+### <li> Algorithm: <br><br>
+
+![Local Image](./NotesImages/ScreenShot4.png)
+
+### For Step 1, Step 2, Step 4, Step 5:
+
+```c++
+    Node* buildTree(int preorder[], int inorder[], int start, int end){
+    static int idx = 0;
+
+    if(start > end){
+        return NULL;
+    }
+
+    int curr = preorder[idx];
+    idx++;
+    Node* node = new Node(curr);
+
+    if(start == end){
+        return node;
+    }
+
+    int pos = search(inorder, start, end, curr); //Calling search function
+
+    node->left = buildTree(preorder, inorder, start, pos - 1);
+    node->right = buildTree(preorder, inorder, pos + 1, end);
+
+    return node;
+};
+```
+
+### For Step 3:
+
+```c++
+int search(int inorder[], int start, int end, int curr){
+    for (int i = start; i <= end; i++){
+        if(inorder[i] == curr){
+            return i;
+        }
+    }
+    return -1;
+}
+```
