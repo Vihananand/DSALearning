@@ -11,3 +11,59 @@
 ### 4. Properties of Binary tree:
 
 ### <ol><li> Maximum nodes at level L = 2<sup>L</sup>.</li>   <li> Maximum nodes in a tree of height H = 2<sup>H</sup>-1.</li>    <li>For N nodes, minimum possible height or minimum number of levels are log<sub>2</sub>(N+1).</li>  <li>A binary tree with L leaves has at least log<sub>2</sub>(N+1)+1 number of leaves.</li>
+
+### 5. Traversal Methods In Trees:
+
+### <li> PreOrder Transversal:
+
+### In PreOrder Transveral, first we start from root note down its value an then we traverse to the left subtree and continue it until the left subtree is covered then we travel to the right subtree. <br><br>
+
+![Local Image](./NotesImages/ScreenShot1.png)
+
+```c++
+//Function for performing preorder traversal
+void preorder(struct Node* root){
+    if(root == NULL){
+        return;
+    }
+    cout << root->data << " ";
+    preorder(root->left);
+    preorder(root->right);
+}
+```
+
+### <li> InOrder Traversal:
+
+### In InOrder Traversal, first we travel to the left subtree until we reach the end of the subtree then we note down the value and then we move to the right subtree. <br><br>
+
+![Local Image](./NotesImages/ScreenShot2.png)
+
+```c++
+//Function for performing inorder traversal
+void inorder(struct Node* root){
+    if(root == NULL){
+        return;
+    }
+    inorder(root->left);
+    cout << root->data << " ";
+    inorder(root->right);
+}
+```
+
+### <li> PostOrder Traversal:
+
+### In PostOrder Traversal we first travel to the left subtree and the right subtree and then note the value. <br><br>
+
+![Local Image](./NotesImages/ScreenShot3.png)
+
+```c++
+//Function for performing postorder traversal
+void postorder(struct Node* root){
+    if(root == NULL){
+        return;
+    }
+    postorder(root->left);
+    postorder(root->right);
+    cout << root->data << " ";
+}
+```
