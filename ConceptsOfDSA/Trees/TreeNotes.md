@@ -128,5 +128,3 @@ int search(int inorder[], int start, int end, int curr){
 
 ### This is a binary search tree: <br><br>
 ![Local Image](./NotesImages/ScreenShot5.png)
-=======
->>>>>>> 77ec725ffe757b8da7283d421f133f375fc6733e
