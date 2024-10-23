@@ -113,3 +113,17 @@ int search(int inorder[], int start, int end, int curr){
     return -1;
 }
 ```
+### 7. Creating tree using postorder and inorder:
+---
+### **Binary Search Tree**
+
+### 1. Binary Search tree follows 3 rules:
+
+### <u>RULE 1:</u> The left subtree of a node contains only nodes with keys lesser than the node's key.
+
+### <u>RULE 2:</u> The right subtree of a node contains only nodes with keys greater than the node's key.
+
+### <u>RULE 3:</u> The left and right subtree each must also be a binary search tree. There must be no duplicate nodes.
+
+### This is a binary search tree: <br><br>
+![Local Image](./NotesImages/ScreenShot5.png)
