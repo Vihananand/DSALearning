@@ -10,7 +10,7 @@
 
 ### 4. Properties of Binary tree:
 
-### <ol><li> Maximum nodes at level L = 2<sup>L</sup>.</li>   <li> Maximum nodes in a tree of height H = 2<sup>H</sup>-1.</li>    <li>For N nodes, minimum possible height or minimum number of levels are log<sub>2</sub>(N+1).</li>  <li>A binary tree with L leaves has at least log<sub>2</sub>(N+1)+1 number of leaves.</li>
+### <ol><li> Maximum nodes at level L = 2<sup>L</sup>.</li>   <li> Maximum nodes in a tree of height H = 2<sup>H</sup>-1.</li>    <li>For N nodes, minimum possible height or minimum number of levels are log<sub>2</sub>(N+1).</li>  <li>A binary tree with L leaves has at least log<sub>2</sub>(N+1)+1 number of leaves.</li>   <li>2<sup>H</sup>-1 = N , where H is height of tree and N is number of nodes, H = log(n + 1)</li>
 
 ### 5. Traversal Methods In Trees:
 
@@ -113,10 +113,10 @@ int search(int inorder[], int start, int end, int curr){
     return -1;
 }
 ```
-<<<<<<< HEAD
+
 ### 7. Creating tree using postorder and inorder:
 ---
-### **Binary Search Tree**
+### **Binary Search Tree(BST)**
 
 ### 1. Binary Search tree follows 3 rules:
 
@@ -128,3 +128,5 @@ int search(int inorder[], int start, int end, int curr){
 
 ### This is a binary search tree: <br><br>
 ![Local Image](./NotesImages/ScreenShot5.png)
+
+### 2. InOrder of BST is always sorted. So if you build a BST and print its inorder it will always be sorted.
