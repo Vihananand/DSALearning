@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    priority_queue<int, vector<int>, greater<int>> minHeap;
+    priority_queue<int, vector<int>, greater<int> > minHeap;
 
     // Insert elements into the min-heap
     minHeap.push(10);
