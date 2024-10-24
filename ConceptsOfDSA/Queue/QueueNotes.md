@@ -67,3 +67,59 @@ int pop(){
         return item;
     }
 ~~~
+
+### <u>Priority Queue</u>
+
+### <ol><li>A Priority Queue is an abstract data type which operates similar to a queue but the only difference is that every element has a priority in which they have to be removed from the queue.</li> <br><li>Priority Queue works on the concept of Heap. A heap is a tree based data structure that satisfies the heap invariant (if A is th parent node of B then A should be ordered with respect to B for all nodes A, B is the heap).</li></ol>
+
+### Implementation of Max- heap
+```c++
+//Max heap which gives priority to the highest elemnt to be appear at top
+#include <iostream>
+#include <queue>
+using namespace std;
+
+int main() {
+    priority_queue<int> maxHeap; 
+
+    maxHeap.push(10);
+    maxHeap.push(30);
+    maxHeap.push(20);
+    maxHeap.push(5);
+
+    // Output the elements in priority order
+    while (!maxHeap.empty()) {
+        cout << maxHeap.top() << " ";  
+        maxHeap.pop();                 
+    }
+
+    return 0;
+}
+
+```
+### Implementation of Min - heap
+
+```c++
+#include <iostream>
+#include <queue>
+using namespace std;
+
+int main() {
+    priority_queue<int, vector<int>, greater<int>> minHeap;
+
+    // Insert elements into the min-heap
+    minHeap.push(10);
+    minHeap.push(30);
+    minHeap.push(20);
+    minHeap.push(5);
+
+    // Output the elements in ascending order
+    while (!minHeap.empty()) {
+        cout << minHeap.top() << " ";  
+        minHeap.pop();                 
+    }
+
+    return 0;
+}
+
+```
