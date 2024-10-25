@@ -98,10 +98,10 @@ int main(){
     insertBST(root, 7);
     insertBST(root, 4);
 
-    inOrder(root);
+    preOrder(root);
     cout << endl;
 
-    preOrder(root);
+    inOrder(root);
     cout << endl;
 
     postOrder(root);
