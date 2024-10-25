@@ -147,11 +147,14 @@ int main(){
     return 0;
 }
 ```
-### Prefix, Infix, Postfix
+---
+### <u>Prefix, Infix, Postfix</u>
 
 ### Infix: Infix follows ***\<operand> \<operator> \<operand>*** and it is good for human readability. Eg. 
 
-### 4 * 2 + 3
+```c++
+4 * 2 + 3
+```
 
 ### Now to solve this we follow BODMAS rule of maths. But this form is very lengthy for the computer to execute.
 ---
@@ -174,7 +177,7 @@ int main(){
 + * 4 2 3 //This is the prefix expression.
 ```
 ---
-### Prefix: Prefix follows ***\<operand> \<operand> \<operator>*** and it is good for computer readibility. To convert a infix expression to postfix expression we first make brackets according to priority then we take out the operator according to brackets. Eg.
+### Postfix: Postfix follows ***\<operand> \<operand> \<operator>*** and it is good for computer readibility. To convert a infix expression to postfix expression we first make brackets according to priority then we take out the operator according to brackets. Eg.
 
 ### Step 1:  
 ```c++
