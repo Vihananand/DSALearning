@@ -1,20 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define n 100
-
 class Stack {
     int* arr;
     int top;
 
 public:
     Stack() {
-        arr = new int[n];
+        arr = new int[100];
         top = -1;
     }
 
     void push(int x) {
-        if (top == n - 1) {
+        if (top == 99) {
             cout << "Stack Overflow!!" << endl;
             return;
         }

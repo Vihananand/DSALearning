@@ -147,3 +147,48 @@ int main(){
     return 0;
 }
 ```
+### Prefix, Infix, Postfix
+
+### Infix: Infix follows ***\<operand> \<operator> \<operand>*** and it is good for human readability. Eg. 
+
+### 4 * 2 + 3
+
+### Now to solve this we follow BODMAS rule of maths. But this form is very lengthy for the computer to execute.
+---
+### Prefix: Prefix follows ***\<operator> \<operand> \<operand>*** and it is good for computer readibility. To convert a infix expression to postfix expression we first make brackets according to priority then we take out the operator according to brackets. Eg.
+
+### Step 1:  
+```c++
+((4 * 2) + 3)
+```
+### Step 2:  
+```c++
+(*(4 2) + 3)
+```
+### Step 3:  
+```c++
++(*(4 2) 3)
+```
+### Step 4:  
+```c++
++ * 4 2 3 //This is the prefix expression.
+```
+---
+### Prefix: Prefix follows ***\<operand> \<operand> \<operator>*** and it is good for computer readibility. To convert a infix expression to postfix expression we first make brackets according to priority then we take out the operator according to brackets. Eg.
+
+### Step 1:  
+```c++
+((4 * 2) + 3)
+```
+### Step 2:  
+```c++
+((4 2)* + 3)
+```
+### Step 3:  
+```c++
+((4 2)* 3)+
+```
+### Step 4:  
+```c++
+4 2 * 3 + //This is the postfix expression.
+```
