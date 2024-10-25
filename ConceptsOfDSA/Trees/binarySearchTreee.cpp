@@ -26,6 +26,16 @@ Node* insertBST(Node* root, int val){
     return root;
 }
 
+//Traversal in BST
+void preOrder(Node* root){
+    if(root == NULL){
+        return;
+    }
+    cout << root->data << " ";
+    preOrder(root->left);
+    preOrder(root->right);
+}
+
 void inOrder(Node* root){
     if(root == NULL){
         return;
@@ -33,6 +43,15 @@ void inOrder(Node* root){
     inOrder(root->left);
     cout << root->data << " ";
     inOrder(root->right);
+}
+
+void postOrder(Node* root){
+    if(root == NULL){
+        return;
+    }
+    postOrder(root->left);
+    postOrder(root->right);
+    cout << root->data << " ";
 }
 
 Node* findMin(Node* root) {
@@ -71,7 +90,7 @@ Node* deleteNode(Node* root, int key) {
 
 int main(){
     Node* root = NULL;
-    root = insertBST(root, 5);
+    root = insertBST(root, 5); //This is the root of BST
     insertBST(root, 6);
     insertBST(root, 3);
     insertBST(root, 2);
@@ -81,5 +100,12 @@ int main(){
 
     inOrder(root);
     cout << endl;
+
+    preOrder(root);
+    cout << endl;
+
+    postOrder(root);
+    cout << endl;
+
     return 0;
 }

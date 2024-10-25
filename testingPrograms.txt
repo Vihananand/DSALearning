@@ -1,0 +1,25 @@
+Node* insertBST(Node* root, int val){
+    if(root == NULL){
+        return new Node(val);
+    }
+    if(val < root->data){
+        root->left = BST(root->left, val);
+    }
+    else{
+        root->right = BST(root->right, val);
+    }
+}
+
+
+Node* searchInBST(Node* root, int key){
+    if(root == NULL){
+        return NULL;
+    }
+    if(root->data == key){
+        return root;
+    }
+    if(root->data > key){
+        searchInBST(root->left, key);
+    }
+    searchInBST(root->right, key);
+}
