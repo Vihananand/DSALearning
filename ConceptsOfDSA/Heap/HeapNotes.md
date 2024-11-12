@@ -159,43 +159,67 @@ int main() {
     return 0;
 }
 ```
+
 <br>
 
 # Creating a Heap
 
 ## Example of a Max Heap
-- ### A max heap example: `[30, 20, 10]` 
-  - ### 30 is greater than both 20 and 10, satisfying max heap properties.
-- ### We can add new elements one by one to maintain the heap structure.
+
+- ### A max heap example: `[30, 20, 10]`
+
+  - ### 30 is greater than both 20 and 10, satisfying max heap properties
+
+- ### We can add new elements one by one to maintain the heap structure
 
 ## In-Place Heap Creation
-- ### **Inserting multiple elements**:
-  - ### Example: Insert 40, 15, 12, 25 in an array `[30, 20, 10]`.
-  - ### Start with the initial heap, then add elements one-by-one to form a complete max heap.
-- ### **In-place adjustment**:
-  - ### No extra array is needed, all adjustments happen within the same array.
-  - ### This approach is called **in-place heap creation**.
+
+- ### **Inserting multiple elements**
+
+  - ### Example: Insert 40, 15, 12, 25 in an array `[30, 20, 10]`
+
+  - ### Start with the initial heap, then add elements one-by-one to form a complete max heap
+
+- ### **In-place adjustment**
+
+  - ### No extra array is needed, all adjustments happen within the same array
+
+  - ### This approach is called **in-place heap creation**
 
 ## Step-by-Step Heap Construction
-### 1. **First element** is already in the heap by itself.
-### 2. **Inserting 20**:
-   ### - Becomes left child of 10, swapped up as 20 > 10.
-### 3. **Inserting 30**:
-   ### - Added as a child, compared with its parent, and adjusted to root.
-### 4. **Further Insertions** (25, 5, 40, 35):
-   ### - Each element is inserted in complete binary order.
-   ### - Compared with its parent and swapped until it satisfies the heap property.
+
+### 1. **First element** is already in the heap by itself
+
+### 2. **Inserting 20**
+
+- ### Becomes left child of 10, swapped up as 20 > 10
+
+### 3. **Inserting 30**
+
+- ### Added as a child, compared with its parent, and adjusted to root
+
+### 4. **Further Insertions** (25, 5, 40, 35)
+
+- ### Each element is inserted in complete binary order
+
+- ### Compared with its parent and swapped until it satisfies the heap property
 
 ## Final Heap Result
-- ### After all insertions and adjustments, the final array representing the heap: `[40, 25, 35, 10, 5, 20, 30]`.
+
+- ### After all insertions and adjustments, the final array representing the heap: `[40, 25, 35, 10, 5, 20, 30]`
 
 ## Procedure for Creating a Heap
-### 1. **Assume** the first element is a heap.
-### 2. Insert elements one by one from the array.
-### 3. Each insertion is done by comparing the new element with its parent and adjusting it within the heap.
-### 4. The array remains in-place.
+
+### 1. **Assume** the first element is a heap
+
+### 2. Insert elements one by one from the array
+
+### 3. Each insertion is done by comparing the new element with its parent and adjusting it within the heap
+
+### 4. The array remains in-place
 
 ### Create MaxHeap Function
+
 ```c++
 #include <bits/stdc++.h>
 using namespace std;
@@ -233,6 +257,7 @@ int main() {
 ```
 
 ### Create MinHeap Function
+
 ```c++
 #include <bits/stdc++.h>
 using namespace std;
@@ -267,7 +292,3 @@ int main() {
     return 0;
 }
 ```
-
-
-
-
