@@ -224,11 +224,10 @@ int main() {
 #include <bits/stdc++.h>
 using namespace std;
 
-void Insert(int A[], int n) {
-    int temp = A[n];
-    int i = n;
+void Insert(int A[], int i) {
+    int temp = A[i];
 
-    while (i > 1 && temp > A[i / 2]) {
+    while (i > 0 && temp > A[i / 2]) {
         A[i] = A[i / 2];
         i = i / 2;
     }
@@ -236,15 +235,15 @@ void Insert(int A[], int n) {
 }
 
 void createAndDisplayHeap() {
-    int A[] = {0, 3, 5, 1, 10, 2, 7};
+    int A[] = {3, 5, 1, 10, 2, 7};
     int size = 6;
 
-    for (int i = 2; i <= size; i++) {
+    for (int i = 0; i < size; i++) {
         Insert(A, i);
     }
 
     cout << "Heap is: ";
-    for (int i = 1; i <= size; i++) {
+    for (int i = 0; i < size; i++) {
         cout << A[i] << " ";
     }
 }
@@ -253,6 +252,7 @@ int main() {
     createAndDisplayHeap();
     return 0;
 }
+
 
 ```
 
@@ -262,11 +262,10 @@ int main() {
 #include <bits/stdc++.h>
 using namespace std;
 
-void Insert(int A[], int n) {
-    int temp = A[n];
-    int i = n;
+void Insert(int A[], int i) {
+    int temp = A[i];
 
-    while (i > 1 && temp < A[i / 2]) {
+    while (i > 0 && temp <> A[i / 2]) {
         A[i] = A[i / 2];
         i = i / 2;
     }
@@ -274,15 +273,15 @@ void Insert(int A[], int n) {
 }
 
 void createAndDisplayHeap() {
-    int A[] = {0, 3, 5, 1, 10, 2, 7};
+    int A[] = {3, 5, 1, 10, 2, 7};
     int size = 6;
 
-    for (int i = 2; i <= size; i++) {
+    for (int i = 0; i < size; i++) {
         Insert(A, i);
     }
 
     cout << "Heap is: ";
-    for (int i = 1; i <= size; i++) {
+    for (int i = 0; i < size; i++) {
         cout << A[i] << " ";
     }
 }
@@ -291,6 +290,7 @@ int main() {
     createAndDisplayHeap();
     return 0;
 }
+
 ```
 <br>
 
