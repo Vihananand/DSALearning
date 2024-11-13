@@ -20,28 +20,34 @@ void DisplayHeap(int A[], int size) {
     cout << endl;
 }
 
-int Delete(int A[], int &size) {
-    int val = A[1];
-    A[1] = A[size];
-    size--;
+int Delete(int A[], int n) {
+    int i, j, x, temp, val;
+    val = A[1];
 
-    int i = 1;
-    int j = 2 * i;
+    x = A[n];
+    A[1] = A[n];
 
-    while (j <= size) {
-        if (j < size && A[j + 1] > A[j]) {
+    i = 1; 
+    j = 2 * i;
+
+    while (j < n - 1)
+    {
+        if(A[j + 1] > A[j]){
             j = j + 1;
         }
+        if(A[i] < A[j]){
+            temp = A[i];
+            A[i] = A[j];
+            A[j] = temp;
 
-        if (A[i] >= A[j]) {
+            i = j;
+            j = j * 2;
+        }
+        else{
             break;
         }
-
-        swap(A[i], A[j]);
-        i = j;
-        j = 2 * i;
     }
-    return val;
+    return val; 
 }
 
 int main() {
@@ -55,8 +61,8 @@ int main() {
     cout << "Initial ";
     DisplayHeap(A, size);
 
-    int deletedValue = Delete(A, size);
-    cout << "Deleted value: " << deletedValue << endl;
+    int deletedValue = Delete(A, 5);
+    cout << "Deleted value: " << deletedValue << " " << endl;
 
     cout << "After deletion ";
     DisplayHeap(A, size);
