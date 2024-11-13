@@ -204,7 +204,7 @@ int main() {
 
 - ### Compared with its parent and swapped until it satisfies the heap property
 
-## Final Heap Result
+### Final Heap Result
 
 - ### After all insertions and adjustments, the final array representing the heap: `[40, 25, 35, 10, 5, 20, 30]`
 
@@ -292,3 +292,87 @@ int main() {
     return 0;
 }
 ```
+<br>
+
+# Heap Deletion in Max Heap
+
+### Key Points
+
+- ### In a **max heap**, you can delete only the **root element** (which is the largest element)
+
+- ### Deletion is only possible for the **highest priority element** (root)
+
+### Steps for Deleting the Root
+
+### 1. **Remove the Root**
+
+- ### Store the root element in a temporary variable for later use if needed
+
+### 2. **Replace Root with Last Element**
+
+- ### Replace the root element with the last element of the heap
+
+- ### This keeps the structure as a **complete binary tree**, though it may no longer satisfy the max heap property
+
+### 3. **Heapify Down (Adjust to Maintain Max Heap)**
+
+- ### Starting from the root, compare it with its children
+
+  - ### **Find the larger child**
+
+  - ### If the root is smaller than the largest child, **swap** them
+
+  - ### Move down to the swapped child's position and **repeat** until the heap property is restored or there are no children
+
+## Example in Array Representation
+
+- ### **Root Removal**: Store `A[1]` (root) in a temporary variable
+
+- ### **Replace with Last Element**: Copy `A[n]` (last element) to `A[1]`, where `n` is the current heap size
+
+- ### **Heapify**
+
+  - ### Compare the new root with its left (`2*i`) and right child (`2*i + 1`)
+
+  - ### Swap with the larger child if the root is smaller, and repeat
+
+## Heap Sort Using Deletion
+
+### 1. **Create the Heap**
+
+- ### Insert elements to build a max heap in `O(n log n)` time
+
+### 2. **Delete Elements**
+
+- ### Repeatedly delete the root (largest element) and place it in a free space at the end of the array
+
+- ### This results in the array being sorted in **ascending order** from left to right
+
+## Complexity Analysis
+
+- ### **Build Heap**: `O(n log n)`
+
+- ### **Deletion**: Each delete operation takes `O(log n)`
+
+  - ### For all `n` elements, deletion takes `O(n log n)`
+
+- ### **Total Time Complexity** for Heap Sort: `O(n log n)`
+
+### Code Skeleton for Delete Function (Pseudo-code)
+
+```cpp
+void deleteRoot(int heap[], int &n) {
+    int root = heap[1];
+    heap[1] = heap[n];  // Move last element to root
+    n--;  // Decrease heap size
+
+    int i = 1;
+    while (2 * i <= n) {
+        int j = 2 * i;  // Left child
+        if (j + 1 <= n && heap[j + 1] > heap[j]) j++;  // Right child is larger
+        if (heap[i] >= heap[j]) break;  // Heap property is restored
+
+        swap(heap[i], heap[j]);  // Swap with larger child
+        i = j;  // Move down the tree
+    }
+}
