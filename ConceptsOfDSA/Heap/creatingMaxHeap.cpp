@@ -1,14 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void Insert(int A[], int i) {
-    int temp = A[i];
+void Insert(int A[], int n){
+    int temp = A[n];
 
-    while (i > 0 && temp > A[i / 2]) {
-        A[i] = A[i / 2];
-        i = i / 2;
+    while(n > 0 && temp > A[n/2]){
+        A[n] = A[n/2];
+        n = n / 2;
     }
-    A[i] = temp;
+
+    A[n] = temp;
 }
 
 void createAndDisplayHeap() {
