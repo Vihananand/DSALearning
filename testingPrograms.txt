@@ -1,25 +1,17 @@
-Node* insertBST(Node* root, int val){
-    if(root == NULL){
-        return new Node(val);
+#include <bits/stdc++.h>
+using namespace std;
+
+void Insert(int A, int n){
+    int temp = A[n];
+
+    while(n > 0 && temp > A[n/2]){
+        A[n] = A[n/2];
+        n = n / 2;
     }
-    if(val < root->data){
-        root->left = BST(root->left, val);
-    }
-    else{
-        root->right = BST(root->right, val);
-    }
+
+    A[n] = temp;
 }
 
+int main(){
 
-Node* searchInBST(Node* root, int key){
-    if(root == NULL){
-        return NULL;
-    }
-    if(root->data == key){
-        return root;
-    }
-    if(root->data > key){
-        searchInBST(root->left, key);
-    }
-    searchInBST(root->right, key);
 }
