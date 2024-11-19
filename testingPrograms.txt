@@ -45,3 +45,7 @@ void Delete(int A[], int &n){
     }
     return val;
 }
+
+int main(){
+    
+}
