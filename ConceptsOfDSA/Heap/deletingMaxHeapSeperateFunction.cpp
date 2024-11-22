@@ -42,11 +42,6 @@ void insertElement(int arr[], int *size, int value) {
 }
 
 void deleteMax(int arr[], int &size) {
-    if (size <= 0) {
-        cout << "Heap is empty. Cannot delete." << endl;
-        return;
-    }
-
     arr[0] = arr[size - 1];
     maxHeapify(arr, size, 0);
 }
