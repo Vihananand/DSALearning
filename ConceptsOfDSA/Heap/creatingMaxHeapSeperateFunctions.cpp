@@ -24,7 +24,7 @@ void maxHeapify(int arr[], int size, int i) {
     }
 }
 
-void buildMinHeap(int arr[], int size) {
+void buildMaxHeap(int arr[], int size) {
     for (int i = (size / 2) - 1; i >= 0; i--) {
         maxHeapify(arr, size, i);
     }
@@ -41,7 +41,7 @@ void insertElement(int arr[], int &size, int value) {
     }
 }
 
-void displayMinHeap(int arr[], int size) {
+void displayMaxHeap(int arr[], int size) {
     cout << "Min Heap is: ";
     for (int i = 0; i < size; i++) {
         cout << arr[i] << " ";
@@ -70,8 +70,8 @@ int main() {
         insertElement(arr, size, value);
     }
     
-    buildMinHeap(arr, size);
-    displayMinHeap(arr, size);
+    buildMaxHeap(arr, size);
+    displayMaxHeap(arr, size);
 
     double average = averageOfElements(arr, size);
     cout << "Average: "<< fixed << setprecision(2)<< average;
