@@ -42,15 +42,10 @@ void insertElement(int arr[], int &size, int value) {
 }
 
 void heapSort(int arr[], int size) {
-    // Step 1: Build a max heap
     buildMaxHeap(arr, size);
 
-    // Step 2: Extract elements from the heap one by one
-    for (int i = size - 1; i > 0; i--) {
-        // Swap the root (largest element) with the last element
+    for (int i = size - 1; i > 0; i--){
         swap(&arr[0], &arr[i]);
-
-        // Reduce the size of the heap and restore the heap property
         maxHeapify(arr, i, 0);
     }
 }
