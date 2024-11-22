@@ -24,7 +24,7 @@ void maxHeapify(int arr[], int size, int i) {
     }
 }
 
-void buildMinHeap(int arr[], int size) {
+void buildMaxHeap(int arr[], int size) {
     for (int i = (size / 2) - 1; i >= 0; i--) {
         maxHeapify(arr, size, i);
     }
@@ -42,17 +42,21 @@ void insertElement(int arr[], int &size, int value) {
 }
 
 void heapSort(int arr[], int size) {
-    buildMinHeap(arr, size);
+    // Step 1: Build a max heap
+    buildMaxHeap(arr, size);
 
+    // Step 2: Extract elements from the heap one by one
     for (int i = size - 1; i > 0; i--) {
+        // Swap the root (largest element) with the last element
         swap(&arr[0], &arr[i]);
 
+        // Reduce the size of the heap and restore the heap property
         maxHeapify(arr, i, 0);
     }
 }
 
-void displayMinHeap(int arr[], int size) {
-    cout << "Min Heap is: ";
+void displayHeap(const string &message, int arr[], int size) {
+    cout << message;
     for (int i = 0; i < size; i++) {
         cout << arr[i] << " ";
     }
@@ -80,11 +84,14 @@ int main() {
         insertElement(arr, size, value);
     }
     
-    buildMinHeap(arr, size);
-    displayMinHeap(arr, size);
+    displayHeap("Original Heap: ", arr, size);
+
+    heapSort(arr, size);
+
+    displayHeap("Sorted Array: ", arr, size);
 
     double average = averageOfElements(arr, size);
-    cout << "Average: "<< fixed << setprecision(2)<< average;
+    cout << "Average: " << fixed << setprecision(2) << average << endl;
 
     delete[] arr;
     return 0;
