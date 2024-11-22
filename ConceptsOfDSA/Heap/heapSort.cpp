@@ -1,64 +1,91 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void Insert(int H[], int i){
-    int temp = H[i];
-
-    while (i > 0 && temp > H[i/2])
-    {
-        H[i] = H[i/2];
-        i = i / 2;
-    }    
-    H[i] = temp;
+void swap(int *x, int *y) {
+    int temp = *x;
+    *x = *y;
+    *y = temp;
 }
 
-int Delete(int A[], int n) {
-    int i, j, x, temp, val;
-    val = A[1];
+void maxHeapify(int arr[], int size, int i) {
+    int largest = i;
+    int left = 2 * i + 1;
+    int right = 2 * i + 2;
 
-    x = A[n];
-    A[1] = A[n];
+    if (left < size && arr[left] > arr[largest])
+        largest = left;
 
-    i = 1; 
-    j = 2 * i;
+    if (right < size && arr[right] > arr[largest])
+        largest = right;
 
-    while (j < n - 1)
-    {
-        if(A[j + 1] > A[j]){
-            j = j + 1;
-        }
-        if(A[i] < A[j]){
-            temp = A[i];
-            A[i] = A[j];
-            A[j] = temp;
-
-            i = j;
-            j = j * 2;
-        }
-        else{
-            break;
-        }
-    }
-    return val; 
-}
-
-void Display(int H[]){
-
-    cout << "Heap: ";
-    for (int i = 0; i < 7; i++)
-    {
-        cout << H[i] << " ";
+    if (largest != i) {
+        swap(&arr[i], &arr[largest]);
+        maxHeapify(arr, size, largest);
     }
 }
 
-int main(){
-    int H[] = {5, 65, 40, 10, 15, 45, 70};
-
-    for (int i = 0; i < 7; i++)
-    {
-        Insert(H, i);
+void buildMinHeap(int arr[], int size) {
+    for (int i = (size / 2) - 1; i >= 0; i--) {
+        maxHeapify(arr, size, i);
     }
+}
 
-    Display(H);
+void insertElement(int arr[], int &size, int value) {
+    arr[size] = value;
+    size++;
+
+    int i = size - 1;
+    while (i > 0 && arr[(i - 1) / 2] < arr[i]) {
+        swap(&arr[i], &arr[(i - 1) / 2]);
+        i = (i - 1) / 2;
+    }
+}
+
+void heapSort(int arr[], int size) {
+    buildMinHeap(arr, size);
+
+    for (int i = size - 1; i > 0; i--) {
+        swap(&arr[0], &arr[i]);
+
+        maxHeapify(arr, i, 0);
+    }
+}
+
+void displayMinHeap(int arr[], int size) {
+    cout << "Min Heap is: ";
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
+double averageOfElements(int arr[], int size) {
+    int sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum += arr[i];
+    }
+    return (double)sum / size;
+}
+
+int main() {
+    int n;
+    cin >> n;
+
+    int *arr = new int[n];
+    int size = 0;
+
+    for (int i = 0; i < n; i++) {
+        int value;
+        cin >> value;
+        insertElement(arr, size, value);
+    }
+    
+    buildMinHeap(arr, size);
+    displayMinHeap(arr, size);
+
+    double average = averageOfElements(arr, size);
+    cout << "Average: "<< fixed << setprecision(2)<< average;
+
+    delete[] arr;
     return 0;
 }

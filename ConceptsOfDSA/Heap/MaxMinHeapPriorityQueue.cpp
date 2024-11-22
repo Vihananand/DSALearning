@@ -16,7 +16,7 @@ void buildMaxHeap(int arr[], int n) {
 }
 
 void buildMinHeap(int arr[], int n) {
-    priority_queue<int, vector<int>, greater<int>> minHeap;
+    priority_queue< int, vector<int>, greater<int> > minHeap;
 
     for (int i = 0; i < n; i++) {
         minHeap.push(arr[i]);
