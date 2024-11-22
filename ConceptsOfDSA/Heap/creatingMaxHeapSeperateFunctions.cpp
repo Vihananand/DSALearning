@@ -8,19 +8,19 @@ void swap(int *x, int *y) {
 }
 
 void minHeapify(int arr[], int size, int i) {
-    int smallest = i;
+    int largest = i;
     int left = 2 * i + 1;
     int right = 2 * i + 2;
 
-    if (left < size && arr[left] < arr[smallest])
-        smallest = left;
+    if (left < size && arr[left] > arr[largest])
+        largest = left;
 
-    if (right < size && arr[right] < arr[smallest])
-        smallest = right;
+    if (right < size && arr[right] > arr[largest])
+        largest = right;
 
-    if (smallest != i) {
-        swap(&arr[i], &arr[smallest]);
-        minHeapify(arr, size, smallest);
+    if (largest != i) {
+        swap(&arr[i], &arr[largest]);
+        minHeapify(arr, size, largest);
     }
 }
 
@@ -30,12 +30,12 @@ void buildMinHeap(int arr[], int size) {
     }
 }
 
-void insertElement(int arr[], int &size, int value) {
-    arr[size] = value;
-    (size)++;
+void insertElement(int arr[], int *size, int value) {
+    (*size)++;
+    arr[*size - 1] = value;
 
-    int i = size - 1;
-    while (i > 0 && arr[(i - 1) / 2] > arr[i]) {
+    int i = *size - 1;
+    while (i > 0 && arr[(i - 1) / 2] < arr[i]) {
         swap(&arr[i], &arr[(i - 1) / 2]);
         i = (i - 1) / 2;
     }
@@ -67,7 +67,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         int value;
         cin >> value;
-        insertElement(arr, size, value);
+        insertElement(arr, &size, value);
     }
     
     buildMinHeap(arr, size);
