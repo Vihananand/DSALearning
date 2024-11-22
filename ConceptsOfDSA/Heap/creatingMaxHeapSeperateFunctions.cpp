@@ -30,11 +30,11 @@ void buildMinHeap(int arr[], int size) {
     }
 }
 
-void insertElement(int arr[], int *size, int value) {
-    (*size)++;
-    arr[*size - 1] = value;
+void insertElement(int arr[], int &size, int value) {
+    arr[size] = value;
+    size++;
 
-    int i = *size - 1;
+    int i = size - 1;
     while (i > 0 && arr[(i - 1) / 2] < arr[i]) {
         swap(&arr[i], &arr[(i - 1) / 2]);
         i = (i - 1) / 2;
@@ -67,7 +67,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         int value;
         cin >> value;
-        insertElement(arr, &size, value);
+        insertElement(arr, size, value);
     }
     
     buildMinHeap(arr, size);

@@ -32,7 +32,7 @@ void buildMinHeap(int arr[], int size) {
 
 void insertElement(int arr[], int &size, int value) {
     arr[size] = value;
-    (size)++;
+    size++;
 
     int i = size - 1;
     while (i > 0 && arr[(i - 1) / 2] > arr[i]) {
