@@ -25,7 +25,7 @@ void minHeapify(int heap[], int size, int i) {
 }
 
 void buildMinHeap(int heap[], int size) {
-    for (int i = size / 2 - 1; i >= 0; i--) {
+    for (int i = (size / 2) - 1; i >= 0; i--) {
         minHeapify(heap, size, i);
     }
 }
@@ -69,7 +69,7 @@ int main() {
     insertElement(heap, &size, 4);
     cout << "After insertion of 4: ";
     displayMinHeap(heap, size);
-    
+
     double avg = averageOfElements(heap, size);
     cout << "Average of elements: " << avg << endl;
 
