@@ -89,4 +89,5 @@ int main() {
     cout << "Average: " << fixed << setprecision(2) << average << endl;
 
     delete[] arr;
+    return 0;
 }
