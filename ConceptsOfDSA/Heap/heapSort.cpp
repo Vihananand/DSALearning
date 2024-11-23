@@ -40,7 +40,7 @@ void insertElement(int arr[], int &size, int value) {
         i = (i - 1) / 2;
     }
 }
-
+//Heap Sort Algorithm remains same for minHeap
 void heapSort(int arr[], int size) {
     buildMaxHeap(arr, size);
 
