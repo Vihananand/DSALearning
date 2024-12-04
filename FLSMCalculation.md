@@ -15,11 +15,9 @@
 **3. Calculating the Updated Subnet Mask**
 
 - Convert the subnet mask to binary:
-     `255.255.255.11100000`
-- Set the last `n` bits to 1:
-     `255.255.255.11111111`
+     `255.255.255.11100000`
 - Convert back to decimal:
-     `255.255.255.255`
+     `255.255.255.224`
 
 **4. Calculating the Host Range**
 
